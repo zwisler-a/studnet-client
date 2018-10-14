@@ -1,10 +1,13 @@
-import { Endpoint, Route, Server } from '@zwisler/bridge';
-import * as cors from 'cors';
+import { Endpoint, Route, Server } from "@zwisler/bridge";
+import * as cors from "cors";
 
-import { StudNetClient } from './login';
-import { StudnetLog } from './studnet-log.service';
+import { StudNetClient } from "./login";
+import { StudnetLog } from "./studnet-log.service";
 
-@Route({ basePath: "/api", middleware: [cors()] })
+@Route({
+  basePath: "/api",
+  middleware: [cors()]
+})
 export class StudnetService {
   constructor(private login: StudNetClient, private logger: StudnetLog) {}
 
@@ -29,5 +32,5 @@ export class StudnetService {
   }
 }
 
-@Server({ port: 9991 })
+@Server({ port: 9991, debug: true })
 export class StudnetServer {}
