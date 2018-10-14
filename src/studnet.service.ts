@@ -5,8 +5,7 @@ import { StudNetClient } from "./login";
 import { StudnetLog } from "./studnet-log.service";
 
 @Route({
-  basePath: "/api",
-  middleware: [cors()]
+  basePath: "/api"
 })
 export class StudnetService {
   constructor(private login: StudNetClient, private logger: StudnetLog) {}
@@ -32,5 +31,9 @@ export class StudnetService {
   }
 }
 
-@Server({ port: 9991, debug: true })
+@Server({
+  port: 9991,
+  debug: true,
+  middleware: [cors()]
+})
 export class StudnetServer {}
