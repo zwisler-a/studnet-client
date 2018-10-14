@@ -1,0 +1,20 @@
+{
+  "name": "studnet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "wp": "tsc && webpack && rimraf out",
+    "start": "ts-node src/studnet.service.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^9.4.7",
+    "bridge": "file:../../../Documents/workplace/bridge/out-tsc",
+    "ssh2": "^0.6.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.3"
+  }
+}
