@@ -1,4 +1,4 @@
-import { Endpoint, Route, Server } from 'bridge';
+import { Endpoint, Route, Server } from '@zwisler/bridge';
 
 import { StudNetClient } from './login';
 import { StudnetLog } from './studnet-log.service';

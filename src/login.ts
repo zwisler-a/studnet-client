@@ -1,4 +1,4 @@
-import { Route } from "bridge";
+import { Route } from "@zwisler/bridge";
 import ssh2 = require("ssh2");
 
 import { StudnetLog } from "./studnet-log.service";
