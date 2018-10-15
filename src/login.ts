@@ -8,9 +8,6 @@ let Client = ssh2.Client;
 
 @Route()
 export class StudNetClient {
-  private host = "139.18.143.253";
-  private username = "162177";
-  private password = "5C844TJS";
   _status = "";
 
   get status() {
