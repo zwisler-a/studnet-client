@@ -1,5 +1,6 @@
 import { Route } from "@zwisler/bridge";
 import ssh2 = require("ssh2");
+import fs = require("fs");
 
 import { StudnetLog } from "./studnet-log.service";
 
@@ -21,6 +22,12 @@ export class StudNetClient {
   constructor(private log: StudnetLog) {}
 
   public connect(): Promise<any> {
+    const config = JSON.parse(fs.readFileSync("./config.json").toString());
+    console.log(config);
+    this.log.debug("Credentials: " + config.username + ":" + config.host);
+    if (!config) {
+      throw new Error("Config could not be loaded!");
+    }
     return new Promise((res, rej) => {
       this.log.debug("Request to establish connection!");
       const client = new Client() as any;
@@ -32,15 +39,15 @@ export class StudNetClient {
       });
       client.on("error", err => {
         this._status = "";
-        this.log.log("Error" + err.toString());
+        this.log.log(err.toString());
       });
       client.connect({
-        host: this.host,
+        host: config.host,
         port: 22,
-        username: this.username,
-        password: this.password
+        username: config.username,
+        password: config.password
       });
-      this.log.debug("Connecting with" + this.username);
+      this.log.debug("Connecting with " + config.username);
     });
   }
 

@@ -6,11 +6,11 @@ export class StudnetLog {
   }
 
   log(txt) {
-    this._log.push("[Log " + this.timestamp() + "]" + txt);
+    this._log.push("[Log " + this.timestamp() + "] " + txt);
   }
 
   debug(txt: string) {
-    this._log.push("[DEBUG " + this.timestamp() + "]" + txt);
+    this._log.push("[DEBUG " + this.timestamp() + "] " + txt);
   }
 
   private timestamp() {
