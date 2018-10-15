@@ -5,11 +5,16 @@ export class StudnetLog {
     return this._log;
   }
 
-  log(...args) {
-    this._log.push(...args);
+  log(txt) {
+    this._log.push("[Log " + this.timestamp() + "]" + txt);
   }
 
-  debug(...args) {
-    this._log.push(...args);
+  debug(txt: string) {
+    this._log.push("[DEBUG " + this.timestamp() + "]" + txt);
+  }
+
+  private timestamp() {
+    const d = new Date();
+    return `${d.getDate()}.${d.getMonth()}.${d.getFullYear()} - ${d.getHours()}:${d.getMinutes()}`;
   }
 }

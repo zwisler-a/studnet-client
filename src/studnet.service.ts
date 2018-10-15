@@ -33,7 +33,6 @@ export class StudnetService {
 
 @Server({
   port: 9991,
-  debug: true,
   middleware: [cors()]
 })
 export class StudnetServer {}

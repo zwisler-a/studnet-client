@@ -32,7 +32,7 @@ export class StudNetClient {
       });
       client.on("error", err => {
         this._status = "";
-        this.log.log("Error", err.toString());
+        this.log.log("Error" + err.toString());
       });
       client.connect({
         host: this.host,
@@ -40,7 +40,7 @@ export class StudNetClient {
         username: this.username,
         password: this.password
       });
-      this.log.debug("Connecting with", this.username);
+      this.log.debug("Connecting with" + this.username);
     });
   }
 
@@ -50,11 +50,11 @@ export class StudNetClient {
         if (err) rej(err);
         stream.on("close", () => {
           this._status = "";
-          this.log.log("Stream closed!");
+          this.log.debug("Stream closed!");
         });
         stream.on("data", data => {
           this._status += data.toString();
-          this.log.debug(data.toString());
+          this.log.log(data.toString());
           this.connection = {
             client,
             stream
