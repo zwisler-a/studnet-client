@@ -20,7 +20,6 @@ export class StudNetClient {
 
   public connect(): Promise<any> {
     const config = JSON.parse(fs.readFileSync("./config.json").toString());
-    console.log(config);
     this.log.debug("Credentials: " + config.username + ":" + config.host);
     if (!config) {
       throw new Error("Config could not be loaded!");
