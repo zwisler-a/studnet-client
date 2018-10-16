@@ -31,11 +31,18 @@ export class StudnetService {
     return this.logger.logs;
   }
 
-  @Endpoint({ method: "POST" })
-  public config(username: string, host: string, password: string) {
+  @Endpoint({ method: "POST", route: "config" })
+  public setConfig(username: string, host: string, password: string) {
     const config = { username, host, password };
     fs.writeFileSync("./config.json", JSON.stringify(config));
     return true;
+  }
+
+  @Endpoint({ method: "GET", route: "config" })
+  public getConfig() {
+    const config = JSON.parse(fs.readFileSync("./config.json").toString());
+    delete config.password;
+    return config;
   }
 }
 
