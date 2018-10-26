@@ -3,10 +3,11 @@ import ssh2 = require("ssh2");
 import fs = require("fs");
 
 import { StudnetLog } from "./studnet-log.service";
+import { Service } from "@zwisler/bridge";
 
 let Client = ssh2.Client;
 
-@Route()
+@Service()
 export class StudNetClient {
   _status = "";
 

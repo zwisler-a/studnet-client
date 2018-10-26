@@ -1,3 +1,6 @@
+import { Service } from "@zwisler/bridge";
+
+@Service()
 export class StudnetLog {
   private _log = [];
 

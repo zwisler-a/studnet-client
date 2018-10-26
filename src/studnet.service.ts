@@ -1,9 +1,11 @@
-import { Endpoint, Route, Server } from "@zwisler/bridge";
-import * as cors from "cors";
+import 'reflect-metadata';
 
-import { StudNetClient } from "./login";
-import { StudnetLog } from "./studnet-log.service";
-import fs = require("fs");
+import { Endpoint, Route, Server } from '@zwisler/bridge';
+import * as cors from 'cors';
+import fs = require('fs');
+
+import { StudNetClient } from './login';
+import { StudnetLog } from './studnet-log.service';
 
 @Route({
   basePath: "/api"
@@ -48,6 +50,8 @@ export class StudnetService {
 
 @Server({
   port: 9991,
-  middleware: [cors()]
+  middleware: [cors()],
+  routes: [StudnetService],
+  providers: [StudnetLog, StudNetClient]
 })
 export class StudnetServer {}
