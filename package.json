@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
-    "wp": "tsc && webpack && rimraf out",
     "start": "ts-node src/studnet.service.ts"
   },
   "author": "",
