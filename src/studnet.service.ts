@@ -51,6 +51,7 @@ export class StudnetService {
 @Server({
   port: 9991,
   middleware: [cors()],
+  host: '0.0.0.0',
   routes: [StudnetService],
   staticPath: './src/client',
   providers: [StudnetLog, StudNetClient]
