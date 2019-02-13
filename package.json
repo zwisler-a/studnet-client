@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^9.4.7",
-    "@zwisler/bridge": "^1.0.4",
+    "@zwisler/bridge": "^1.0.18",
     "cors": "^2.8.4",
     "ssh2": "^0.6.0",
     "ts-node": "^7.0.1",

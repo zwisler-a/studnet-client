@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>StudNET</title>
+  </head>
+  <body>
+    <div class="pre-wrapper">
+      <h1>Status</h1>
+      <pre js-status></pre>
+    </div>
+    <div hidden js-log-wrapper class="pre-wrapper">
+      <h1>Log</h1>
+      <pre js-log></pre>
+    </div>
+    <div class="controls">
+      <button js-show-log>Show Log</button>
+      <span class="spacer"></span>
+      <button class="primary" js-connect>Connect</button>
+      <button js-disconnect>Disconnect</button>
+    </div>
+  </body>
+  <script async src="./main.js"></script>
+</html>
