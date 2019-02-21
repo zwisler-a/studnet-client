@@ -22,6 +22,29 @@ button.primary {
   overflow: auto;
 }
 
+#btn-config {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+.config-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  background: white;
+  box-sizing: border-box;
+}
+
+.config-wrapper textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 250px;
+}
+
 .spacer {
   flex: 1 1 auto;
 }

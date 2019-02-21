@@ -42,9 +42,7 @@ export class StudnetService {
 
   @Endpoint({ method: 'GET', route: 'config' })
   public getConfig() {
-    const config = JSON.parse(fs.readFileSync('./config.json').toString());
-    delete config.password;
-    return config;
+    return JSON.parse(fs.readFileSync('./config.json').toString());
   }
 }
 

@@ -8,14 +8,28 @@
     <title>StudNET</title>
   </head>
   <body>
+
+    <!-- STATUS DISPLAY -->
     <div class="pre-wrapper">
       <h1>Status</h1>
       <pre js-status></pre>
     </div>
+
+    <!-- LOG DISPLAY -->
     <div hidden js-log-wrapper class="pre-wrapper">
       <h1>Log</h1>
       <pre js-log></pre>
     </div>
+
+    <!-- CONFIG -->
+    <div hidden js-config-wrapper class="config-wrapper">
+      <h1>Config</h1>
+      <textarea js-config></textarea>
+      <button js-save-config>Save</button>
+    </div>
+
+    <button id="btn-config" js-show-config>Config</button>
+    <!-- CONTROL BUTTONS (CONNECT/DISCONNECT/SHOWLOG) -->
     <div class="controls">
       <button js-show-log>Show Log</button>
       <span class="spacer"></span>
