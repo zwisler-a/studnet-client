@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import { Endpoint, Route, Server, Brige } from '@zwisler/bridge';
+import { Endpoint, Route, Server, Bridge } from '@zwisler/bridge';
 import * as cors from 'cors';
 import fs = require('fs');
 
@@ -25,6 +25,7 @@ export class StudnetService {
 
   @Endpoint()
   public status() {
+    console.log('status');
     return this.login.status;
   }
 
@@ -48,7 +49,7 @@ export class StudnetService {
 
 @Server({
   port: 9991,
-  middleware: [cors()],
+  debug: true,
   host: '0.0.0.0',
   routes: [StudnetService],
   staticPath: './src/client',
@@ -56,4 +57,4 @@ export class StudnetService {
 })
 export class StudnetServer {}
 
-Brige.bootstrap(StudnetServer);
+Bridge.bootstrap(StudnetServer);

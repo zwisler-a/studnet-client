@@ -14,7 +14,7 @@
   const btnShowConfig = document.querySelector('[js-show-config]');
   const btnSaveConfig = document.querySelector('[js-save-config]');
 
-  const apiPrefix = 'http://192.168.0.16:9991';
+  const apiPrefix = '';
 
   /** Loads the status and sets it in the apropriate html element (preStatus) */
   const fetchStatus = async () => {
